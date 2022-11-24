@@ -13,8 +13,10 @@ class MciSoeEmailCustomerData
     {
         $order_number        = !empty( $order_number ) ? "<p><strong style='margin:15px 0 15px 0;text-align:left;text-transform:uppercase;'> {$order_number} </strong></p>" : "";
         $h2_shipping_address = !$address_error ? "<h2 style='margin:0 0 0px 0;text-align:left;padding-bottom:15px;'>" . __( "Send the order to:", "supplier-order-email" ) . "</h2>" : "";
-        //$address             = "<p style='margin:0 0 3px;text-align:left;'> {$address} </p>";
-        $address        = "<p style='margin:0 0 3px;text-align:left;'> {$order->get_billing_first_name()} {$order->get_billing_last_name()} </p>";
+
+        //$address             = "<p style='margin:0 0 3px;text-align:left;'> {$address} </p>";  //OLD ADDRESS LINE
+        $address = "<p style='margin:0 0 3px;text-align:left;'> {$order->get_billing_first_name()} {$order->get_billing_last_name()} </p>"; //NEW ADDRESS LINE
+
         $phone          = !empty( $phone ) ? "<p style='margin:0 0 0 0;text-align:left;'> {$phone} </p>" : "";
         $customer_email = !empty( $customer_email ) ? "<p style='margin:0;text-align:left;'> {$customer_email} </p>" : "";
         $delivery_date  = !empty( $delivery_date ) ? "<p style='margin:10px 0 0;text-align:left;'> {$delivery_date} </p>" : "";
